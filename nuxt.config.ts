@@ -14,12 +14,17 @@ export default defineNuxtConfig({
         componentDir: "./components/ui",
     },
 
+    components: {
+        global: true,
+        dirs: ["~/components"],
+    },
+
     nitro: {
         preset: "netlify",
     },
 
     runtimeConfig: {
-        openaiApiKey: "",
+        openaiApiKey: process.env.NUXT_OPENAI_API_KEY,
         assistantId: "",
     },
 
